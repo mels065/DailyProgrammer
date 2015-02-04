@@ -14,4 +14,16 @@ class Game
 		
 		return [word1, word2]
 	end
+	
+	def result(debris1, debris2)
+		#debris1 and debris2 are strings
+		puts debris1 + debris2
+		if debris1.length > debris2.length
+			puts "Word 1 wins!"
+		elsif debris1.length < debris2.length
+			puts "Word 2 wins!"
+		else
+			puts "It's a tie!"
+		end
+	end
 end
