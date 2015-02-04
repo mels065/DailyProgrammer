@@ -27,5 +27,33 @@ class Game
 		else
 			puts "It's a tie!"
 		end
+		puts
+	end
+	
+	public
+	
+	def run
+		puts "Welcome to Words with Enemies!"
+		puts
+		
+		loop do
+			puts "Type in two words separated by a space"
+			print "If you want to quit, type in q: "
+			user_input = gets.chomp
+			
+			if user_input.downcase == 'q'
+				break
+			elsif /^[a-zA-Z]+ [a-zA-Z]+$/.match(user_input)
+				words = user_input.split
+				battle(words[0], words[1])
+				result
+			else
+				puts "Invalid input!"
+				puts
+			end
+		end
 	end
 end
+
+game = Game.new
+game.run
